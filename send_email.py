@@ -12,18 +12,11 @@ def send(receivers,message):
     mess['From'] = sender
     mess['To'] = ",".join(receivers)
     mess.attach(MIMEText(message))
-    # content = MIMEText('<html><body><img src="cid:imageid" alt="imageid"></body></html>','html','utf-8')
-    # message.attach(content)
-    # file=open("test.png", "rb")
-    # img_data = file.read()
-    # file.close()
-    # img = MIMEImage(img_data)
-    # img.add_header('Content-ID', 'imageid')
-    # message.attach(img)
 
     try:
         server=smtplib.SMTP_SSL("smtp.qq.com",465)
-        server.login(sender,"ktqobkcycwvjecfa")
+#         server.login()中，修改为自己的邮箱授权码
+        server.login(sender,"ktqobkcycxxxxxx")
         server.sendmail(sender,receivers,mess.as_string())
         server.quit()
         print ("邮件发送成功")
