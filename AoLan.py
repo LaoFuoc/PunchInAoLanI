@@ -206,7 +206,8 @@ def main(username, password):
 
 if __name__ == '__main__':
     session = requests.session()
-    dicts = {'1712085179': 'laofu..00', '1712086175': '155921'}
+#     dicts中存入字典，键为学号，值为密码。
+    dicts = {'1712085xxx': 'laofuxxx'}
     infos = []
     for username, password in dicts.items():
         info = main(username, password)
